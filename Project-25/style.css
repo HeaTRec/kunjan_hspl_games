@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 1rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+
+html, body, form {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+  perspective: 1000px;
+}
+
+h1, h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+header {
+  
+  z-index: 99;
+  width: 100%;
+  padding: 0.2rem 0 0;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+p {
+  font-size: 1.5rem;
+  max-width: 30rem;
+  margin: 0 auto 0.5rem;
+}
+
+button {
+  background: #fff;
+  border: solid 1px currentColor;
+  font-size: 1rem;
+  padding: 0.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+input {
+  position: absolute;
+  right: 100%;
+}
+
+label {
+  position: fixed;
+  text-indent: -100%;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  content: "";
+  width: 80%;
+  height: 10px;
+  background: #eee;
+  display: block;
+  border: solid 3px currentColor;
+  opacity: 1;
+  transform: translate3d(-50%, -50%, 0);
+  transition: all 300ms ease-out;
+  border-radius: 50%;
+}
+
+/* 
+	This is the reason why Sass is being used, everything else
+	is standard CSS
+*/
+label:nth-of-type(1) {
+  transform: translate3d(-50%, -50%, 0) rotate(125deg);
+  margin: 6%;
+  z-index: 59;
+}
+
+label:nth-of-type(2) {
+  transform: translate3d(-50%, -50%, 0) rotate(152deg);
+  margin: 5%;
+  z-index: 58;
+}
+
+label:nth-of-type(3) {
+  transform: translate3d(-50%, -50%, 0) rotate(34deg);
+  margin: 8%;
+  z-index: 57;
+}
+
+label:nth-of-type(4) {
+  transform: translate3d(-50%, -50%, 0) rotate(269deg);
+  margin: 6%;
+  z-index: 56;
+}
+
+label:nth-of-type(5) {
+  transform: translate3d(-50%, -50%, 0) rotate(257deg);
+  margin: 9%;
+  z-index: 55;
+}
+
+label:nth-of-type(6) {
+  transform: translate3d(-50%, -50%, 0) rotate(332deg);
+  margin: 4%;
+  z-index: 54;
+}
+
+label:nth-of-type(7) {
+  transform: translate3d(-50%, -50%, 0) rotate(147deg);
+  margin: 5%;
+  z-index: 53;
+}
+
+label:nth-of-type(8) {
+  transform: translate3d(-50%, -50%, 0) rotate(239deg);
+  margin: 8%;
+  z-index: 52;
+}
+
+label:nth-of-type(9) {
+  transform: translate3d(-50%, -50%, 0) rotate(22deg);
+  margin: 7%;
+  z-index: 51;
+}
+
+label:nth-of-type(10) {
+  transform: translate3d(-50%, -50%, 0) rotate(36deg);
+  margin: 5%;
+  z-index: 50;
+}
+
+label:nth-of-type(11) {
+  transform: translate3d(-50%, -50%, 0) rotate(214deg);
+  margin: 2%;
+  z-index: 49;
+}
+
+label:nth-of-type(12) {
+  transform: translate3d(-50%, -50%, 0) rotate(147deg);
+  margin: 5%;
+  z-index: 48;
+}
+
+label:nth-of-type(13) {
+  transform: translate3d(-50%, -50%, 0) rotate(161deg);
+  margin: 9%;
+  z-index: 47;
+}
+
+label:nth-of-type(14) {
+  transform: translate3d(-50%, -50%, 0) rotate(287deg);
+  margin: 2%;
+  z-index: 46;
+}
+
+label:nth-of-type(15) {
+  transform: translate3d(-50%, -50%, 0) rotate(182deg);
+  margin: 5%;
+  z-index: 45;
+}
+
+label:nth-of-type(16) {
+  transform: translate3d(-50%, -50%, 0) rotate(190deg);
+  margin: 2%;
+  z-index: 44;
+}
+
+label:nth-of-type(17) {
+  transform: translate3d(-50%, -50%, 0) rotate(319deg);
+  margin: 3%;
+  z-index: 43;
+}
+
+label:nth-of-type(18) {
+  transform: translate3d(-50%, -50%, 0) rotate(232deg);
+  margin: 1%;
+  z-index: 42;
+}
+
+label:nth-of-type(19) {
+  transform: translate3d(-50%, -50%, 0) rotate(176deg);
+  margin: 8%;
+  z-index: 41;
+}
+
+label:nth-of-type(20) {
+  transform: translate3d(-50%, -50%, 0) rotate(145deg);
+  margin: 4%;
+  z-index: 40;
+}
+
+input:first-of-type:checked + label,
+input:checked + label + input:checked + label {
+  opacity: 0 !important;
+  pointer-events: none;
+}
+
+input:not(:checked) ~ input:checked ~ .gameover,
+input:checked + label + input:checked + label + .winner {
+  transform: translate3d(0, 0, 0);
+}
+
+.message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translate3d(-100%, 0, 0);
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 200;
+}
+
+.message-content {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+}
+
+

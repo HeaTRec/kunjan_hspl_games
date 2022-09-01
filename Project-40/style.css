@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 1rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+html, body {
+	width: 100%;
+	height: 100%;
+	
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	background: radial-gradient(
+		hsl(35, 100%, 94%), 
+		hsl(35, 100%, 88%),
+		hsl(35, 100%, 80%)
+	);
+	
+	color: hsl(35, 70%, 40%);
+	text-align: center;
+	font-family: 'Russo One', sans-serif;
+	font-size: 3vh;
+}
+
+svg {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+	max-height: 80vh;
+	overflow: visible;
+		
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+}
+
+svg:not(:root) {
+	overflow: visible;
+}
+
+path, rect, circle, use {
+	cursor: pointer;
+}
+
+#reset {
+	display: inline-block;
+	margin: 3vh auto 0;
+	padding: 0.5vh 1vw;
+	cursor: pointer;
+	border-radius: 5px;
+	background: radial-gradient(
+		hsl(35, 100%, 94%), 
+		hsl(35, 100%, 88%),
+		hsl(35, 100%, 80%)
+	);
+	box-shadow: 1px 2px 0 hsl(35, 70%, 35%);
+	border: 2px solid hsl(35, 50%, 50%);
+	text-transform: uppercase;
+
+	visibility: hidden;
+}
+
+.credits { 
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(
+		hsla(35, 100%, 94%, 0.98), 
+		hsla(35, 100%, 88%, 0.98),
+		hsla(35, 100%, 80%, 0.98)
+	);
+	
+	display: none;
+}
+
+table, tr, td, th {
+	border: 1px solid hsl(35, 50%, 50%);
+}
+
+
+table {
+	width: 90%;
+	margin: 5% auto;
+}
+
+td {
+	width: 50%;
+	padding: 4px 8px;
+}
+
+p {
+	margin: 0 2vw;
+}
+
+
+
+
+/*  Dolls classes from the SVG file */
+.cls-1, .cls-31, .cls-37, .cls-4, .cls-6, .cls-7 {
+		fill: #fff;
+}
+
+.cls-1, .cls-13, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-2, .cls-26, .cls-3, .cls-4, .cls-7, .cls-8, .cls-9 {
+		stroke: #000;
+}
+
+.cls-1, .cls-15, .cls-2, .cls-20, .cls-21, .cls-26, .cls-3, .cls-32, .cls-33, .cls-34, .cls-8 {
+		stroke-linecap: round;
+}
+
+.cls-1, .cls-11, .cls-15, .cls-2, .cls-20, .cls-21, .cls-26, .cls-3, .cls-32, .cls-33, .cls-34, .cls-8 {
+		stroke-linejoin: round;
+}
+
+.cls-1, .cls-11, .cls-13, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-2, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-3, .cls-32, .cls-33, .cls-34, .cls-37, .cls-7, .cls-8, .cls-9 {
+		stroke-width: 16px;
+}
+
+.cls-2, .cls-25 {
+		fill: #007f12;
+}
+
+.cls-17, .cls-3 {
+		fill: none;
+}
+
+.cls-13, .cls-16, .cls-17, .cls-18, .cls-19, .cls-22, .cls-23, .cls-24, .cls-25, .cls-31, .cls-37, .cls-4, .cls-7, .cls-9 {
+		stroke-miterlimit: 10;
+}
+
+.cls-31, .cls-4 {
+		stroke-width: 8px;
+}
+
+.cls-20, .cls-5 {
+		fill: #a5b6c6;
+}
+
+.cls-15, .cls-27, .cls-9 {
+		fill: #ffe7c5;
+}
+
+.cls-10 {
+		fill: #f2f0e4;
+}
+
+.cls-11 {
+		stroke: #f2f0e4;
+}
+
+.cls-12, .cls-13, .cls-23 {
+		fill: red;
+}
+
+.cls-14, .cls-16 {
+		fill: #d5ad00;
+}
+
+.cls-18, .cls-36 {
+		fill: #c16c06;
+}
+
+.cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25 {
+		stroke: #8f9eaa;
+}
+
+.cls-24 {
+		fill: lime;
+}
+
+.cls-26 {
+		fill: blue;
+}
+
+.cls-28 {
+		fill: url(#linear-gradient);
+}
+
+.cls-29 {
+		fill: url(#linear-gradient-2);
+}
+
+.cls-30 {
+		fill: #ff9700;
+}
+
+.cls-31 {
+		stroke: #a5b6c6;
+}
+
+.cls-32 {
+		fill: url(#linear-gradient-3);
+		stroke: url(#linear-gradient-4);
+}
+
+.cls-33 {
+		stroke: #007f12;
+		fill: url(#radial-gradient);
+}
+
+.cls-34 {
+		fill: #4db7ff;
+}
+
+.cls-34, .cls-37 {
+		stroke: #4db7ff;
+}
+
+.cls-35 {
+		fill: #ffe000;
+}
+
+

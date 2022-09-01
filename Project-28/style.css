@@ -1,0 +1,696 @@
+@charset "UTF-8";
+/* ------------------------------------------------------------
+ * リセット
+ * ------------------------------------------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*, :before, :after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  padding: 20px 10px;
+  font-family: "Kosugi Maru", sans-serif;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* ------------------------------------------------------------
+ * じゃんけん
+ * ------------------------------------------------------------ */
+/* 大枠
+ * -------------------------------------------------- */
+.janken {
+  width: 600px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+/* ディスプレイ
+ * -------------------------------------------------- */
+.jankenDisplay {
+  position: relative;
+  width: calc(100% - 8px);
+  height: 66%;
+  margin: 4px;
+  overflow: hidden;
+  background-color: #ffff69;
+  border: 16px solid #9a9a9a;
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px #0b0b0b, inset 0 0 0 4px #0b0b0b;
+}
+
+.jankenDisplay_message {
+  position: relative;
+  overflow: hidden;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #ffb400;
+  text-align: center;
+  background-color: #333;
+  line-height: 1.6;
+}
+.jankenDisplay_message::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background-image: linear-gradient(#0a0600 1px, transparent 0), linear-gradient(0, #0a0600 1px, transparent 1px);
+  background-image: -webkit-linear-gradient(#0a0600 1px, transparent 0), -webkit-linear-gradient(0, #0a0600 1px, transparent 1px);
+  background-size: 2px 2px;
+}
+.jankenDisplay_message span {
+  display: inline-block;
+  white-space: nowrap;
+}
+.jankenDisplay_message.is-result span {
+  padding-left: 100%;
+  -webkit-animation: marquee 6s linear infinite;
+          animation: marquee 6s linear infinite;
+}
+.jankenDisplay_message.is-result.is-win {
+  -webkit-animation: blinkText 0.5s infinite;
+          animation: blinkText 0.5s infinite;
+}
+
+.jankenDisplay_inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(100% - (2.8rem * 1.6));
+  overflow: hidden;
+}
+.jankenDisplay_inner::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: calc(50% - 16px);
+  content: "";
+  background-color: #000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.jankenDisplay_hand {
+  position: relative;
+  z-index: 1;
+  width: 70%;
+  padding-top: 70%;
+  background: url(https://taqumo.me/game/jyanken/img/janken-hand.svg) no-repeat 0 0;
+  background-size: 300% auto;
+}
+
+/* ボタン
+ * -------------------------------------------------- */
+.janken_btn {
+  position: relative;
+  border-radius: 50%;
+}
+.janken_btn::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  content: "";
+  background-color: #000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.jankenBtns {
+  position: relative;
+  height: calc(34% - 20px);
+  padding: 16px;
+  margin-top: 20px;
+  background-color: #feccff;
+  border: 4px solid #0b0b0b;
+  border-radius: 8px;
+}
+
+.jankenPlay {
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  z-index: 10;
+  width: 24%;
+  transform: translateX(-50%);
+  transition: transform 0.2s ease-out;
+}
+.jankenPlay .janken_btn {
+  padding: 50%;
+  background-color: #f00;
+  -webkit-animation: play 2s infinite;
+          animation: play 2s infinite;
+}
+.jankenPlay .janken_btn::before {
+  width: 114%;
+  height: 114%;
+}
+.jankenPlay .janken_btn span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4em;
+  font-size: 1.625rem;
+  font-weight: bold;
+  color: #fff;
+  transform: translate(-50%, -50%);
+}
+.jankenPlay:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.jankenHands {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.jankenHandsItem {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: calc((100% - 30px) / 3);
+  padding: 5% 0 4em;
+  font-size: 0.875rem;
+  text-align: center;
+  list-style: none;
+  border: 4px solid #0b0b0b;
+  border-radius: 8px;
+}
+.jankenHandsItem::before {
+  display: block;
+  width: 50%;
+  padding-top: 50%;
+  margin: 0 auto;
+  content: "";
+  background: url(https://taqumo.me/game/jyanken/img/janken-hand.svg) no-repeat 0 0;
+  background-size: 300% auto;
+}
+
+.jankenHandsItem_btn {
+  width: 100%;
+  transition: transform 0.2s ease-out;
+}
+.jankenHandsItem_btn .janken_btn {
+  padding: 24%;
+  margin-top: 8%;
+  transition: transform 0.2s ease-out;
+}
+.jankenHandsItem_btn .janken_btn::before {
+  width: 120%;
+  height: 120%;
+}
+.jankenHandsItem_btn:hover {
+  transform: scale(1.1);
+}
+
+.jankenHandsItem_label {
+  position: absolute;
+  bottom: -1em;
+  left: 50%;
+  display: inline-block;
+  min-width: 6em;
+  padding: 0.2em 1em;
+  color: #fe0100;
+  text-align: center;
+  background-color: #ffff69;
+  border: 4px solid #0b0b0b;
+  border-radius: 10px;
+  transform: translateX(-50%);
+}
+
+.jankenHandsItem.is-active {
+  background-image: repeating-linear-gradient(-45deg, transparent, transparent 1rem, #eee 1rem, #eee 2rem);
+  background-size: 200% 200%;
+  -webkit-animation: barberpole 10s linear infinite;
+          animation: barberpole 10s linear infinite;
+}
+.jankenHandsItem.is-goo {
+  background-color: #03d382;
+}
+.jankenHandsItem.is-goo .jankenHandsItem_btn .janken_btn {
+  background-color: #1f575f;
+}
+.jankenHandsItem.is-choki {
+  background-color: #00bbf1;
+}
+.jankenHandsItem.is-choki::before {
+  background-position: 50% 0;
+}
+.jankenHandsItem.is-choki .jankenHandsItem_btn .janken_btn {
+  background-color: #ffc41e;
+}
+.jankenHandsItem.is-pa {
+  background-color: #b59aeb;
+}
+.jankenHandsItem.is-pa::before {
+  background-position: 100% 0;
+}
+.jankenHandsItem.is-pa .jankenHandsItem_btn .janken_btn {
+  background-color: #58386b;
+}
+
+/* メッセージ
+ * -------------------------------------------------- */
+.janken_message {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: none;
+  height: 1em;
+  margin: auto;
+  font-weight: bold;
+  font-size: 6.25rem;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px -1px 0 #555, -1px 2px 0 #35a7ff, -2px 4px 1px #35a7ff, -3px 6px 1px #35a7ff, -4px 8px 2px #35a7ff;
+}
+.janken_message.is-show {
+  display: block;
+  -webkit-animation: bounceIn 0.5s;
+          animation: bounceIn 0.5s;
+}
+
+/* プレイ中
+ * -------------------------------------------------- */
+.janken.is-play .jankenPlay .janken_btn {
+  -webkit-animation: none;
+          animation: none;
+}
+.janken.is-play .jankenHandsItem.is-goo .jankenHandsItem_btn .janken_btn {
+  -webkit-animation: goo 2s infinite;
+          animation: goo 2s infinite;
+}
+.janken.is-play .jankenHandsItem.is-choki .jankenHandsItem_btn .janken_btn {
+  -webkit-animation: choki 2s infinite;
+          animation: choki 2s infinite;
+}
+.janken.is-play .jankenHandsItem.is-pa .jankenHandsItem_btn .janken_btn {
+  -webkit-animation: pa 2s infinite;
+          animation: pa 2s infinite;
+}
+
+/* メディアクエリ
+ * -------------------------------------------------- */
+@media (min-width: 600px) {
+  html, body {
+    min-height: 850px;
+  }
+}
+@media (max-width: 600px) {
+  html, body {
+    min-height: 600px;
+  }
+
+  .janken {
+    width: 100%;
+  }
+
+  .jankenPlay {
+    top: -20vw;
+  }
+  .jankenPlay .janken_btn span {
+    font-size: calc(0.875rem + 12 * ((100vw - 320px) / 280));
+  }
+
+  .jankenHandsItem_btn .janken_btn {
+    padding: 30%;
+  }
+
+  .jankenHandsItem {
+    font-size: calc(0.625rem + 4 * ((100vw - 320px) / 280));
+  }
+
+  .janken_message {
+    font-size: calc(3.75rem + 60 * ((100vw - 320px) / 280));
+  }
+}
+@media (max-width: 320px) {
+  .jankenPlay .janken_btn span {
+    font-size: 0.875rem;
+  }
+
+  .jankenHandsItem {
+    font-size: 0.625rem;
+  }
+
+  .janken_message {
+    font-size: 3.75rem;
+  }
+}
+/* アニメーション
+ * -------------------------------------------------- */
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translate3d(0, 0, 0);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0.89);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes marquee {
+  from {
+    transform: translate(0%);
+  }
+  99%, to {
+    transform: translate(-100%);
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translate(0%);
+  }
+  99%, to {
+    transform: translate(-100%);
+  }
+}
+@-webkit-keyframes barberpole {
+  100% {
+    background-position: 100% 100%;
+  }
+}
+@keyframes barberpole {
+  100% {
+    background-position: 100% 100%;
+  }
+}
+@-webkit-keyframes blinkText {
+  0% {
+    color: #ffb400;
+  }
+  25% {
+    color: #ed7bf4;
+  }
+  50% {
+    color: #99fafd;
+  }
+  75% {
+    color: #fae569;
+  }
+  100% {
+    color: #86fb73;
+  }
+}
+@keyframes blinkText {
+  0% {
+    color: #ffb400;
+  }
+  25% {
+    color: #ed7bf4;
+  }
+  50% {
+    color: #99fafd;
+  }
+  75% {
+    color: #fae569;
+  }
+  100% {
+    color: #86fb73;
+  }
+}
+@-webkit-keyframes play {
+  0% {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #ff8b8b;
+  }
+  100% {
+    background-color: #f00;
+  }
+}
+@keyframes play {
+  0% {
+    background-color: #f00;
+  }
+  50% {
+    background-color: #ff8b8b;
+  }
+  100% {
+    background-color: #f00;
+  }
+}
+@-webkit-keyframes goo {
+  0% {
+    background-color: #1f575f;
+  }
+  50% {
+    background-color: #198797;
+  }
+  100% {
+    background-color: #1f575f;
+  }
+}
+@keyframes goo {
+  0% {
+    background-color: #1f575f;
+  }
+  50% {
+    background-color: #198797;
+  }
+  100% {
+    background-color: #1f575f;
+  }
+}
+@-webkit-keyframes choki {
+  0% {
+    background-color: #ffc41e;
+  }
+  50% {
+    background-color: #ffe18d;
+  }
+  100% {
+    background-color: #ffc41e;
+  }
+}
+@keyframes choki {
+  0% {
+    background-color: #ffc41e;
+  }
+  50% {
+    background-color: #ffe18d;
+  }
+  100% {
+    background-color: #ffc41e;
+  }
+}
+@-webkit-keyframes pa {
+  0% {
+    background-color: #58386b;
+  }
+  50% {
+    background-color: #8362cf;
+  }
+  100% {
+    background-color: #58386b;
+  }
+}
+@keyframes pa {
+  0% {
+    background-color: #58386b;
+  }
+  50% {
+    background-color: #8362cf;
+  }
+  100% {
+    background-color: #58386b;
+  }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}

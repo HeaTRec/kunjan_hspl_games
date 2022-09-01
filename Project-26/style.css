@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+  
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #000;
+  height: 100%;
+  width: 99%;
+}
+
+h1 {
+  font-family: 'Space Mono', monospace;
+  /* Space Mono is an original type family designed by the renowned Colophon Foundry */
+  font-size: 24px;
+  font-weight: 500;
+  word-spacing: -5px;
+  color: #fff;
+  margin: 0;
+  padding: 10px 20px 10px 20px;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section{
+  position: fixed;
+  bottom: 0px;
+}
+
+section:first-child{
+  min-height: 350px;
+  z-index: 1000;
+  transition-timing-function: ease-in;
+  transition: 0.3s;
+}
+
+.ball {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sphere {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+	background-image:radial-gradient(center, #fff, #ccc);
+  background-image:-webkit-radial-gradient(center, #fff, #ccc);
+	box-shadow:inset 0px -5px 10px rgba(0,0,0,0.5);
+  -webkit-box-shadow:inset 0px -5px 10px rgba(0,0,0,0.5);
+}
+
+.shadow {
+  width: 50px;
+  height: 10px;
+  margin-top: 50px;
+  border-radius: 50%;
+  background-color: #000;
+  filter: blur(10px);
+  z-index: -500;
+}
+
+.paddle{
+  width: 200px;
+  height: 140px;
+  bottom: 0px;
+  position: fixed;
+  z-index: -1000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.surface {
+  width: 200px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ff2b59;
+  background: linear-gradient(45deg, #ff2b59 0%, #b30e32 100%);
+  box-shadow: inset 0px -5px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0px -5px 5px rgba(0,0,0,0.5);
+}
+
+.surface::after {
+  content: "";
+  width: 200px;
+  height: 80px;
+  margin-top: 8px;
+  position: absolute;
+  z-index: -1100;
+  border-radius: 50%;
+  background-color: #ffe4ea;
+	box-shadow: inset 0px -5px 1px rgba(179,6,44,1);
+  -webkit-box-shadow: inset 0px -5px 1px rgba(179,6,44,1);
+}
+
+.handle{
+  width: 50px;
+  height: 60px;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+  background-color: #954520;
+  background-image: linear-gradient(90deg, rgba(79,32,15,0.8) 0%, rgba(199,108,63,1) 100%);
+  background-image: -webkit-linear-gradient(90deg, rgba(79,32,15,0.8) 0%, rgba(199,108,63,1) 100%);
+	box-shadow:inset 0px -5px 10px rgba(0,0,0,0.5), 0px 1px 7px #fff, 0px -1px 7px #000;
+  -webkit-box-shadow:inset 0px -5px 10px rgba(0,0,0,0.5), 0px 1px 7px #fff, 0px -1px 7px #000;
+}

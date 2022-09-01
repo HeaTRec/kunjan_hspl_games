@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tower of hanoi</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="header.css">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> Tower of hanoi </a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="howtoplay.html">How to play</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacypolicy.html">Privacy policy</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+</header>
+<div class="main">
+    <div id="msg" class="msg"></div>
+    <div id="start" class="start">
+        <button>Start</button>
+        <span>0</span>
+    </div>
+    <div id="timer" class="timer">
+        <span id="hr">00 :</span>
+        <span id="min">00 :</span>
+        <span id="sec">00</span>
+    </div>
+    <div class="container-bottom">
+        <div class="row">
+            <div class="box main-box" id="box-1">
+                <div class="game-borders" data-first="1">
+                    <div class="border size-1" data-size="1" id="row-1-box-1"></div>
+                    <div class="border size-2" data-size="2" id="row-1-box-2"></div>
+                    <div class="border size-3" data-size="3" id="row-1-box-3"></div>
+                    <div class="border size-4" data-size="4" id="row-1-box-4"></div>
+                    <div class="border size-5" data-size="5" id="row-1-box-5"></div>
+                    <div class="border size-6" data-size="6" id="row-1-box-6"></div>
+                </div>
+                <div class="layout">
+                    <div class="line-top"></div>
+                    <div class="line-bottom"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box" id="box-2">
+                <div class="game-borders" data-first="1"></div>
+                <div class="layout">
+                    <div class="line-top"></div>
+                    <div class="line-bottom"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box" id="box-3">
+                <div class="game-borders" data-first="0"></div>
+                <div class="layout">
+                    <div class="line-top"></div>
+                    <div class="line-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    
+let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+}
+</script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Grocery Website Design Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> Slide Puzzle </a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="howtoplay.html">How to play</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacypolicy.html">Privacy policy</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+</header>
+
+</head>
+<body>
+    <div style="margin: 100px auto; text-align:center">
+        <h1>Testsda Puzzle</h1>
+      </div>
+    <div class="layout">
+      <div class="content">
+        <div class="board"></div>
+        <a data-num="2" href="">Too easy</a>
+        <a data-num="3" href="">Easy</a>
+        <a data-num="4" href="">Normal</a>
+        <a data-num="5" href="">Tricky</a>
+        <a data-num="8" href="">Hard</a>
+        <a data-num="10" href="">Insane</a>
+      </div>
+    </div>
+
+
+    <script>
+    
+
+
+        let navbar = document.querySelector('.navbar');
+        
+        document.querySelector('#menu-btn').onclick = () =>{
+            navbar.classList.toggle('active');
+        
+        }
+        
+        window.onscroll = () =>{
+            navbar.classList.remove('active');
+        }
+        
+        
+        
+        </script>
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
+

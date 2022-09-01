@@ -1,0 +1,321 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+html,
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #DFF6FD;
+	height: 100%;
+	color: #555555;
+	-webkit-tap-highlight-color: transparent;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+  
+.hidden {
+	display: none;
+}
+
+svg {
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	padding: 1.2em;
+	fill: #555555;
+	cursor: pointer;
+}
+
+#selector .instructions {
+	text-align: center;
+	width: 100%;
+	font-size: 1.3em;
+	padding-top: 1em;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+#selector .level {
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	margin-top: -1em;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+#selector .countdown {
+	text-align: center;
+	display: none;
+	font-size: 5em;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	margin-top: -1em;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	-ms-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+#selector .level .levelicon {
+	width: 3em;
+	height: 3em;
+	display: inline-block;
+	border-radius: 4em;
+	margin-right: 10%;
+	cursor: pointer;
+	-webkit-transition: .2s ease-in-out;
+	-moz-transition: .2s ease-in-out;
+	-o-transition: .2s ease-in-out;
+	-ms-transition: .2s ease-in-out;
+	transition: .2s ease-in-out;
+}
+
+#selector .level .levelicon:last-child {
+	margin: 0;
+}
+
+#howtoplay {
+	display: none;
+}
+
+#howtoplay .instructions {
+	text-align: center;
+	width: 100%;
+	font-size: 1.3em;
+	padding-top: 1em;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+#howtoplay ol {
+	margin-top: 3em;
+}
+
+#howtoplay ol li {
+	margin-bottom: 1em;
+	font-size:1.2em;
+}
+
+.selected {
+	display: table;
+}
+
+.cellselect {
+	background-color: #4ADE9B;
+}
+
+table {
+	height: 100%;
+	width: 100%;
+	display: none;
+}
+
+table tr td {
+	border: 3px solid #4ADE9B;
+	cursor: pointer;
+}
+
+#gameover {
+	display: none;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 2em;
+	margin-top: 126px;
+}
+
+#gameover .gameoverheader {
+	display: block;
+	font-size: 2.5em;
+	margin-bottom: 1em;
+}
+
+#gameover .gameovervalue {
+	display: block;
+	font-size: 1.5em;
+	margin-bottom: 1em;
+}
+
+#gameover .gameovertext {
+	display: block;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+#gameover a {
+	color: green;
+}
+
+@media screen and (max-height: 270px) {
+	#selector .level {
+		top: 70%;
+	}
+	#selector .countdown {
+		top: 70%;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	#selector .instructions {
+		text-align: right;
+		margin-left: -.5em
+	}
+	
+	#howtoplay .instructions {
+		text-align: right;
+		margin-left: -.5em
+	}
+	
+	svg {
+		padding: 1.2em .5em;
+	}
+}
+
+
+

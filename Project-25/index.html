@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Pick up sticks</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Pick up sticks</h1>
+      <p>By selecting the one that's on top.</p>
+    </header>
+      
+    <form>
+        <input type="checkbox" id="stick-1" />
+        <label for="stick-1">Stick 1</label>
+    
+        <input type="checkbox" id="stick-2" />
+        <label for="stick-2">Stick 2</label>
+    
+        <input type="checkbox" id="stick-3" />
+        <label for="stick-3">Stick 3</label>
+    
+        <input type="checkbox" id="stick-4" />
+        <label for="stick-4">Stick 4</label>
+        
+        <input type="checkbox" id="stick-5" />
+        <label for="stick-5">Stick 5</label>
+    
+        <input type="checkbox" id="stick-6" />
+        <label for="stick-6">Stick 6</label>
+    
+        <input type="checkbox" id="stick-7" />
+        <label for="stick-7">Stick 7</label>
+    
+        <input type="checkbox" id="stick-8" />
+        <label for="stick-8">Stick 8</label>
+    
+        <input type="checkbox" id="stick-9" />
+        <label for="stick-9">Stick 9</label>
+    
+        <input type="checkbox" id="stick-10" />
+        <label for="stick-10">Stick 10</label>
+    
+         <input type="checkbox" id="stick-11" />
+        <label for="stick-11">Stick 11</label>
+    
+        <input type="checkbox" id="stick-12" />
+        <label for="stick-12">Stick 12</label>
+    
+        <input type="checkbox" id="stick-13" />
+        <label for="stick-13">Stick 13</label>
+    
+        <input type="checkbox" id="stick-14" />
+        <label for="stick-14">Stick 14</label>
+        
+        <input type="checkbox" id="stick-15" />
+        <label for="stick-15">Stick 15</label>
+    
+        <input type="checkbox" id="stick-16" />
+        <label for="stick-16">Stick 16</label>
+    
+        <input type="checkbox" id="stick-17" />
+        <label for="stick-17">Stick 17</label>
+    
+        <input type="checkbox" id="stick-18" />
+        <label for="stick-18">Stick 18</label>
+    
+        <input type="checkbox" id="stick-19" />
+        <label for="stick-19">Stick 19</label>
+    
+        <input type="checkbox" id="stick-20" />
+        <label for="stick-20">Stick 20</label> 
+      
+        <div class="message winner">
+            <div class="message-content">
+                <h2>Wow you are AWESOME!</h2>
+                <p>This may well be your super power, with great power comes great responsiblity.</p>
+                <button type="reset">Do it again!</button>
+            </div>
+        </div>
+      
+        <div class="message gameover">
+            <div class="message-content">
+                <h2>Ah nuts, you stuffed up</h2>
+                <p>Don&apos;t worry this isn't an essential life skill.</p>
+                <button type="reset">Try again</button>
+            </div>
+        </div>
+    
+    </form>
+    
+    
+    <script src="main.js"></script>
+    <header class="header">
+
+        <a href="#" class="logo"> Pic up stick </a>
+    
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="howtoplay.html">How to play</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacypolicy.html">Privacy policy</a>
+        </nav>
+    
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    </header>
+    
+    <script>
+        
+    let navbar = document.querySelector('.navbar');
+    
+    document.querySelector('#menu-btn').onclick = () =>{
+        navbar.classList.toggle('active');
+    
+    }
+    
+    window.onscroll = () =>{
+        navbar.classList.remove('active');
+    }
+    </script>
+</body>
+
+</html>

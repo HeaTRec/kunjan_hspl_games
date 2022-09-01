@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fruits</title>
+    <link rel="stylesheet" href="style.css">
+  
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="header.css">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo">fruits </a>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="howtoplay.html">How to play</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="privacypolicy.html">Privacy policy</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+</header>
+
+<!-- start of preloader -->
+<!--    '🍇',
+    '🍈',
+    '🍉',
+    '🍊',
+    '🍋',
+    '🍌',
+    '🍍',
+    '🍎',
+    '🍏',
+    '🍑',
+    '🍒',
+    '🍓', -->
+    <div id="preloader">
+        <ul class="preloader-dick">
+          <li class="preloader-card">
+            <i class="fa apple">🍏</i>
+          </li>
+          <li class="preloader-card">
+            <i class="fa apple">🍏</i>
+          </li>
+          <li class="preloader-card">
+            <i class="fa paper-plane-o">🍌</i>
+          </li>
+          <li class="preloader-card">
+            <i class="fa paper-plane-o">🍌</i>
+          </li>
+        </ul>
+        <div class="preloader-txt">
+          <p>Loading...</p>
+        </div>
+      </div>
+      <!-- end of preloader -->
+      <div class="container">
+        <header>
+          <h1>Matching Game</h1>
+        </header>
+      
+        <section class="score-panel">
+          <ul class="stars">
+            <li><i class="star-one fa fa-star"></i></li>
+            <li><i class="star-two fa fa-star"></i></li>
+            <li><i class="star-three fa fa-star"></i></li>
+          </ul>
+      
+          <span class="moves">0</span> Moves
+      
+          <div class="float-right">
+            <div id="timer-show" class="float-left">
+              <span id="time-info">00 : 00</span>
+            </div>
+            <div id="restart" class="restart-icon__holder float-right">
+              <i class="fa fa-repeat"></i>
+            </div>
+          </div>
+        </section>
+      
+        <ul class="deck">
+          <li class="card animated">
+            <i class="fa diamond">🍒</i>
+          </li>
+          <li class="card animated">
+            <i class="fa paper-plane-o">🍌</i>
+          </li>
+          <li class="card animated">
+            <i class="fa anchor">🍉</i>
+          </li>
+          <li class="card animated">
+            <i class="fa bolt">🍑</i>
+          </li>
+          <li class="card animated">
+            <i class="fa cube">🍓</i>
+          </li>
+          <li class="card animated">
+            <i class="fa anchor">🍉</i>
+          </li>
+          <li class="card animated">
+            <i class="fa leaf">🍈</i>
+          </li>
+          <li class="card animated">
+            <i class="fa bicycle">🍋</i>
+          </li>
+          <li class="card animated">
+            <i class="fa diamond">🍒</i>
+          </li>
+          <li class="card animated">
+            <i class="fa bomb">🍇</i>
+          </li>
+          <li class="card animated">
+            <i class="fa leaf">🍈</i>
+          </li>
+          <li class="card animated">
+            <i class="fa bomb">🍇</i>
+          </li>
+          <li class="card animated">
+            <i class="fa bolt">🍑</i>
+          </li>
+          <li class="card animated">
+            <i class="fa bicycle">🍋</i>
+          </li>
+          <li class="card animated">
+            <i class="fa paper-plane-o">🍌</i>
+          </li>
+          <li class="card animated">
+            <i class="fa cube">🍓</i>
+          </li>
+        </ul>
+      </div>
+      <!-- win game message section  -->
+      <div id="win-message-section">
+        <div class="righ-mark">
+          <!-- (svg Congratulations Page Done Icon, with my own styles) from : https://codepen.io/abhijit_mishra/pen/yXWwqd -->
+          <svg version="1.1" id="tick" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
+            <path class="circ path" d="M30.5,6.5L30.5,6.5c6.6,6.6,6.6,17.4,0,24l0,0c-6.6,6.6-17.4,6.6-24,0l0,0c-6.6-6.6-6.6-17.4,0-24l0,0C13.1-0.2,23.9-0.2,30.5,6.5z"/>
+            <polyline class="tick path" points="11.6,20 15.9,24.2 26.4,13.8 "/>
+          </svg>
+        </div>
+        <div class="fade-out game-win-info">
+          <h2>
+            Congratulations! You Won!
+          </h2>
+          <div class="txt-holder">
+            <p class="txt" id="win-info">
+              with <span id="moves-number"></span> moves and <span id="stars-info"></span><br> in <span id="seconds-info"></span>
+            </p>
+            <p class="txt">Wooooooo!</p>
+          </div>
+          <div id="play-again" class="play-again__botton">Play again!</div>
+        </div>
+      </div>
+      <!-- end of win game message section -->
+      <!-- start of leader board  section -->
+      <section id="leader-board" class="fade-out">
+        <header>
+          <h2>High Scores</h2>
+        </header>
+        <article>
+          <div class="leader-board__info">
+            <span class="leader-board__score">#1 <span class="score-show"></span></span>
+          </div>
+          <div class="leader-board__info">
+            <span class="leader-board__score">#2 <span class="score-show"></span></span>
+          </div>
+          <div class="leader-board__info">
+            <span class="leader-board__score">#3 <span class="score-show"></span></span>
+          </div>
+        </article>
+        <div class="scored"></div>
+      </section>
+      <!-- end of leader board section -->
+      
+<script>
+    
+
+
+let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+}
+
+
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Save the Semicolon</title>
+</head>
+<body>
+
+        <script>
+          var $ = {};
+        </script>
+        <div id="cont">
+          <div id="game">
+            <div id="blockContainer"></div>
+            <div id="bob">
+              <div class="head">
+                <div id="eyeLeft" class="eye"></div>
+                <div id="eyeRight" class="eye"></div>
+                <div id="browLeft" class="brow"></div>
+                <div id="browRight" class="brow"></div>
+              </div>
+              <div id="bobody">
+                <div class="body"><svg version="1.1" width="95" height="115" viewBox="-20 -70 85 130" xmlns="http://www.w3.org/2000/svg"><path fill="#808080" stroke="#000000" stroke-width="1" d="M33,1.167v7.499C34.667,45.5,1.667,43.5,1.667,43.5l0.323-7.508C27,38.333,24,14.166,24,14.166H1.667L2,1.167H33z"/></svg></div>
+              </div>
+            </div>
+            <div id="ghost">
+              <div class="head">
+                <div id="eyeLeft" class="eye"></div>
+                <div id="eyeRight" class="eye"></div>
+                <div id="browLeft" class="brow"></div>
+                <div id="browRight" class="brow"></div>
+              </div>
+              <div class="body"><svg version="1.1" width="95" height="115" viewBox="-20 -70 85 130" xmlns="http://www.w3.org/2000/svg"><path fill="#808080" stroke="#000000" stroke-width="1" d="M33,1.167v7.499C34.667,45.5,1.667,43.5,1.667,43.5l0.323-7.508C27,38.333,24,14.166,24,14.166H1.667L2,1.167H33z"/></svg></div>
+            </div><canvas id="main"></canvas>
+            <div id="my-gui-container" class="right bigText"></div>
+          </div>
+          <div id="overlay"></div>
+          <div id="effect"></div>
+        </div>
+      </body>
+    <script src="main.js"></script>
+
+    <header class="header">
+
+      <a href="#" class="logo"> Save the Semicolon </a>
+  
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="howtoplay.html">How to play</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacypolicy.html">Privacy policy</a>
+      </nav>
+  
+      <div class="icons">
+          <div class="fas fa-bars" id="menu-btn"></div>
+      </div>
+  </header>
+  
+  <script>
+      
+  let navbar = document.querySelector('.navbar');
+  
+  document.querySelector('#menu-btn').onclick = () =>{
+      navbar.classList.toggle('active');
+  
+  }
+  
+  window.onscroll = () =>{
+      navbar.classList.remove('active');
+  }
+  </script>
+</body>
+</html>

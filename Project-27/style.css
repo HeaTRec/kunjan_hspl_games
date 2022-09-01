@@ -1,0 +1,187 @@
+
+
+html {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: #222;
+    color: white;
+    text-align: center;
+  }
+  body { 
+    width: 100%;
+    height: 600px;
+    position: relative; 
+  }
+  
+  #balloon_game {
+    width: 100%;
+    max-width: 1400px;
+    height: 600px;
+    background: 
+      no-repeat bottom/1400px url('https://contentservice.mc.reyrey.net/image_v1.0.0/?id=5572270f-11e2-535b-b1b4-7e30f3528388'), 
+      linear-gradient(to bottom, rgba(30,144,255,.5) 95%, green 95%), 
+      repeat url('https://contentservice.mc.reyrey.net/image_v1.0.0/?id=6e8a00e2-72b4-578f-8577-85d3566778d8');
+  /*   z-index: -1; */
+    cursor: crosshair;
+    overflow: hidden;
+    position: absolute;
+    left:50%;
+    top: 88px;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    filter: drop-shadow(0 25px 50px black);
+    border-radius: .5rem;
+  }
+  
+  #dart {
+    width: 50px;
+    height: 50px;
+    background: 
+      radial-gradient(circle, black 10px, transparent 10px),
+      linear-gradient(to bottom right, transparent 47%, black 47%, black 53%, transparent 53%),
+      linear-gradient(to bottom left, transparent 47%, black 47%, black 53%, transparent 53%);
+    position: absolute;
+    opacity: 0;
+    pointer-events:none;
+  }
+  
+  #explode_balloon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    /*   background: red; */
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+  }
+  
+  .particle {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    border-radius: 50%;
+    /*   transition: .5s; */
+  }
+  
+  #score {
+    font-size: 250px;
+    font-family: monospace;
+    opacity:.15;
+    text-align: center;
+    user-select: none;
+    color: maroon;
+  }
+  .throw {
+    animation: throw .25s linear forwards;
+  }
+  @keyframes throw {
+    0% { opacity: 1; transform:rotate(0deg) scale(1); }
+    100% { opacity: 0; transform:rotate(360deg) scale(.01) ; }
+  }
+  
+  .balloon {
+    border-radius:50% 50% 50% 50% / 40% 40% 60% 60% ;
+  }
+  .balloon:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    border-right: 4px solid white;
+    position: absolute;
+    left: -8px;
+    top: 0;
+    opacity: .25;
+  }
+  .balloon:after {
+    content: '';
+    width:2px;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 1px);
+    background: gray;
+  }
+  
+  .float {
+    animation: float 10s linear forwards;
+  }
+  
+  @keyframes float {
+    100% { top: -250px; }
+  }
+
+  
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Work+Sans:wght@400;500;600;700&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Work Sans", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.footer {
+    background: #f3f0ff;
+}
+
+.section-hero p {
+    font-size: 2.2rem;
+}
+
+.footer {
+    padding: 0 4.8rem;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(78, 6, 6);
+}
+
+.footer p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(67, 231, 204, 0.925);
+    padding-bottom: 8px;
+}
+
+.link {
+    display: flex;
+    gap: 4.8rem;
+}
+
+.link a {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    transition: all 0.3s;
+}
+
+.link a:hover,
+.link a:active {
+    color: #364fc7;
+}
+
+@media (max-width: 520px) {
+    .footer {
+        flex-direction: column;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}

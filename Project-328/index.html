@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>React memory</title>
+</head>
+<body>
+
+  <header class="header">
+
+    <a href="#" class="logo">React memory </a>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="howtoplay.html">How to play</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="privacypolicy.html">Privacy policy</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+</header>
+
+<script>
+    
+let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+}
+</script>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700" rel="stylesheet">
+<div class="content">
+<pre>
+-----------------------------------------------------
+
+  ██╗        ██╗    ██╗  
+ ██╔╝       ██╔╝    ╚██╗ 
+██╔╝       ██╔╝      ╚██╗
+╚██╗      ██╔╝       ██╔╝
+ ╚██╗    ██╔╝       ██╔╝ 
+  ╚═╝    ╚═╝        ╚═╝  
+                          
+Greetings developers, Shall we play a game?
+
+Re-type the number you see below. Ez right?
+
+-----------------------------------------------------
+
+</pre>
+
+		<div id="app"></div>
+		
+   <a class="app__author" href="https://twitter.com/phammikun" target="_blank">by @phammikun</a>
+	</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.1/react-dom.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

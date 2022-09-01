@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+canvas{
+    margin-top: 95px;
+}
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+
+body {
+  margin: 0;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  box-shadow: 3px 5px 0px 0px rgba(0, 0, 0, 0.75);
+}
+
+a,
+a:visited {
+  color: inherit;
+}
+
+#score {
+  position: absolute;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.9em;
+  color: white;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  max-width: 100px;
+  text-align: center;
+  line-height: 1.6em;
+}
+
+#controls {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  display: none;
+}
+
+#controls #buttons {
+  width: 80px;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+#controls #instructions {
+  margin-left: 20px;
+  max-width: 300px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+#controls button {
+  width: 100%;
+  height: 40px;
+  background-color: white;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+#results {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(20, 20, 20, 0.75);
+  display: none;
+  z-index: 51;
+}
+
+#results .content {
+  max-width: 350px;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+#result-youtube {
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#result-youtube span {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.youtube,
+#youtube-card {
+  display: none;
+  color: black;
+}
+
+#youtube-main {
+  opacity: 0;
+  transition: opacity 2s;
+}
+
+@media (min-height: 425px) {
+  #score {
+    font-size: 1.5em;
+    max-width: 150px;
+  }
+
+  #controls {
+    display: flex;
+  }
+
+  /** Youtube logo by https://codepen.io/alvaromontoro */
+  .youtube {
+    z-index: 50;
+    width: 100px;
+    min-width: 100px;
+    height: 70px;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    transform: scale(0.8);
+    transition: transform 0.5s;
+    display: block;
+    background: red;
+    border-radius: 50% / 11%;
+  }
+
+  #results .youtube {
+    position: relative;
+    right: 0;
+    bottom: 0;
+  }
+
+  .youtube:hover,
+  .youtube:focus {
+    transform: scale(0.9);
+    color: black;
+  }
+
+  .youtube::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 7.5%;
+    left: -6%;
+    width: 112%;
+    height: 85%;
+    background: red;
+    border-radius: 9% / 50%;
+  }
+
+  .youtube::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    width: 45px;
+    height: 30px;
+    border: 15px solid transparent;
+    box-sizing: border-box;
+    border-left: 30px solid white;
+  }
+
+  .youtube span {
+    font-size: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .youtube:hover + #youtube-card {
+    z-index: 49;
+    display: block;
+    position: fixed;
+    bottom: 42px;
+    width: 300px;
+    background-color: white;
+    right: 40px;
+    padding: 25px 130px 25px 25px;
+  }
+}

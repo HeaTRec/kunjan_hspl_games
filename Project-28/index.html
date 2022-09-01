@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Rock paper scissors</title>
+</head>
+<body>
+    
+  <header class="header">
+
+    <a href="#" class="logo"> HSPL </a>
+
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="howtoplay.html">How to play</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="privacypolicy.html">Privacy policy</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+</header>
+
+<script>
+    
+let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+}
+</script>
+<div class="janken" id="js-janken">
+    <div class="jankenDisplay">
+      <p class="jankenDisplay_message" id="js-result"><span>じゃんけん</span></p>
+      <div class="jankenDisplay_inner">
+        <div class="jankenDisplay_hand" id="js-enemyHand"></div>
+      </div>
+    </div>
+    <div class="jankenBtns">
+      <p class="jankenPlay">
+        <button class="janken_btn" id="js-btnPlay" type="button"><span>スタート</span></button>
+      </p>
+      <div class="jankenHands">
+        <div class="jankenHandsItem is-goo">
+          <p class="jankenHandsItem_btn">
+            <button class="janken_btn js-myHand" type="button" value="0"></button>
+          </p>
+          <p class="jankenHandsItem_label">グー</p>
+        </div>
+        <div class="jankenHandsItem is-choki">
+          <p class="jankenHandsItem_btn">
+            <button class="janken_btn js-myHand" type="button" value="1"></button>
+          </p>
+          <p class="jankenHandsItem_label">チョキ</p>
+        </div>
+        <div class="jankenHandsItem is-pa">
+          <p class="jankenHandsItem_btn">
+            <button class="janken_btn js-myHand" type="button" value="2"></button>
+          </p>
+          <p class="jankenHandsItem_label">パー</p>
+        </div>
+      </div>
+    </div>
+    <p class="janken_message" id="js-message"></p>
+  </div>
+    
+
+   
+    <script src="main.js"></script>
+</body>
+</html>
