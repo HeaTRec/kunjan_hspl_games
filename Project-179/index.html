@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firefly Defender</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo">Firefly Defender </a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="howtoplay.html">How to play</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacypolicy.html">Privacy policy</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+</header>
+<div class="page page-canvas-defender">
+	<canvas id="canvas"></canvas>
+	<div class="wrap-ui">
+		<div class="player-hp-bar">
+			<div class="bar"></div>
+		</div>
+		<div class="enemy-hp-bar">
+			<div class="bar"></div>
+		</div>
+	</div>
+	<div class="wrap-popup show">
+		<div class="inner">
+			<h2>Firefly Defender</h2>
+			<p class="small">(earn at least 1000 points to win)</p>
+			<h3 id="state"></h3>
+			<p>Your score <span id="score">0</span></p>
+			<p>Your best score <span id="best">0</span></p>
+			<button id="btn">Start</button>
+		</div>
+	</div>
+	<div class="wrap-media" style="display: none;">
+		<audio id="bg" src="http://static.dar-studio.com/codepen/audio/firefly-defender/firefly-2.mp3"  loop="true"></audio>
+		<audio id="thunder" src="http://static.dar-studio.com/codepen/audio/firefly-defender/thunder-1.mp3"></audio>
+		<audio id="ripple" src="http://static.dar-studio.com/codepen/audio/firefly-defender/ripple-3.mp3"></audio>
+		<audio id="laser" src="http://static.dar-studio.com/codepen/audio/firefly-defender/laser-2.mp3"></audio>
+		<audio id="bonus" src="http://static.dar-studio.com/codepen/audio/firefly-defender/bonus-1.mp3"></audio>
+		<audio id="lose" src="http://static.dar-studio.com/codepen/audio/firefly-defender/lose-1.mp3"></audio>
+		<audio id="win" src="http://static.dar-studio.com/codepen/audio/firefly-defender/win-3.mp3"></audio>
+		<audio id="hit" src="http://static.dar-studio.com/codepen/audio/firefly-defender/hit-2.mp3"></audio>
+		<audio id="die" src="http://static.dar-studio.com/codepen/audio/firefly-defender/die-1.mp3"></audio>
+	</div>
+</div>
+<script>
+    
+let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+}
+</script>
+<script src="main.js"></script>
+</body>
+</html>

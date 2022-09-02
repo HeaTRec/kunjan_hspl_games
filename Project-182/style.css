@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+    height: 0;
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+
+html, body {
+    background-color: #f6fbff;
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  
+  .reset {
+    transform: translate(-50%, 0);
+    font-family: sans-serif;
+    font-weight: 100;
+    letter-spacing: 0.1em;
+    position: absolute;
+    color: #f6fbff;
+    background-color: #ff392e;
+    cursor: pointer;
+    left: 50%;
+    top: 50%;
+  }
+  @media screen and (orientation: landscape) {
+    .reset {
+      margin-top: 35vh;
+      padding: 2vh;
+      font-size: 2vh;
+    }
+  }
+  @media screen and (orientation: portrait) {
+    .reset {
+      margin-top: 35vw;
+      padding: 2vw;
+      font-size: 2vw;
+    }
+  }
+  
+  .checkers {
+    position: absolute;
+  }
+  
+  .board {
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+    font-size: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+  }
+  @media screen and (orientation: landscape) {
+    .board {
+      box-shadow: 0 0 0 2vh #f5e062;
+    }
+  }
+  @media screen and (orientation: portrait) {
+    .board {
+      box-shadow: 0 0 0 2vw #f5e062;
+    }
+  }
+  
+  .checker {
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    top: 0;
+  }
+  @media screen and (orientation: landscape) {
+    .checker {
+      box-shadow: 0 -0.25vh 0 0.15vh rgba(0, 0, 0, 0.25) inset;
+      margin: 0.5vh 0 0 0.5vh;
+      width: 9vh;
+      height: 9vh;
+    }
+  }
+  @media screen and (orientation: portrait) {
+    .checker {
+      box-shadow: 0 -0.25vw 0 0.15vw rgba(0, 0, 0, 0.25) inset;
+      margin: 0.5vw 0 0 0.5vw;
+      width: 9vw;
+      height: 9vw;
+    }
+  }
+  .checker.red {
+    background-color: #ff392e;
+  }
+  .checker.black {
+    background-color: #464748;
+  }
+  
+  .column {
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+  }
+  .column:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+  .column li {
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    display: block;
+  }
+  .column li:before {
+    content: "";
+    box-shadow: 0 0 0 4vw #f5e062;
+    border-radius: 50%;
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    left: 10%;
+    top: 10%;
+  }
+  @media screen and (orientation: landscape) {
+    .column {
+      width: 10vh;
+    }
+    .column li {
+      width: 10vh;
+      height: 10vh;
+    }
+  }
+  @media screen and (orientation: portrait) {
+    .column {
+      width: 10vw;
+    }
+    .column li {
+      width: 10vw;
+      height: 10vw;
+    }
+  }
+  

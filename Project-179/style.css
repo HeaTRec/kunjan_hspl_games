@@ -139,7 +139,119 @@ html{
 
 }
 
-canvas{
-    display: block; margin:0 auto; background: #fff; border: 5px solid black; width: 400px; height: 400px;
-margin-top: 80px;  
-}
+.page-canvas-defender {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .page-canvas-defender canvas {
+    display: block;
+  }
+  
+  .page-canvas-defender h2 {
+    color: #689F38;
+    font-size: 32px;
+    padding: 0 0 5px;
+    margin: 10px 0;
+    text-align: center;
+    border-bottom: 1px solid currentColor;
+  }
+  
+  .page-canvas-defender h3 {
+    font-size: 40px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .page-canvas-defender h3.lose {
+    color: #E64A19;
+  }
+  
+  .page-canvas-defender h3.win {
+    color: #689F38;
+  }
+  
+  .page-canvas-defender p {
+    font-size: 24px;
+    text-align: center;
+    margin: 0 0 10px;
+  }
+  
+  .page-canvas-defender p.small {
+    color: #607D8B;
+    font-size: 12px;
+  }
+  
+  .page-canvas-defender button {
+    display: block;
+    margin: auto;
+    min-width: 180px;
+    outline: none;
+    border: 2px solid #8BC34A;
+    border-radius: 25px;
+    background: #689F38;
+    color: #ffffff;
+    font-size: 18px;
+    height: 50px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .page-canvas-defender .wrap-ui .player-hp-bar {
+    position: fixed;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 80px;
+    height: 10px;
+    border: 2px solid #FF5722;
+  }
+  
+  .page-canvas-defender .wrap-ui .enemy-hp-bar {
+    position: fixed;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 240px;
+    height: 10px;
+    border: 2px solid #FF5722;
+  }
+  
+  .page-canvas-defender .wrap-ui .bar {
+    display: block;
+    height: 100%;
+    background: #E64A19;
+  }
+  
+  .page-canvas-defender .wrap-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.65);
+  }
+  
+  .page-canvas-defender .wrap-popup.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .page-canvas-defender .wrap-popup .inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 320px;
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    top: 50%;
+    transform: translate(0, -50%);
+  }

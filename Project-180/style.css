@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+* {
+    font-family: "Gochi Hand", cursive;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    text-align: center;
+    margin-top: 111px;
+  }
+  
+  .container {
+    width: 200px;
+    height: 300px;
+    margin: 30px auto;
+    position: relative;
+  }
+  
+  .vertical {
+    background: black;
+    width: 25px;
+    height: 300px;
+    position: absolute;
+    right: 25px;
+  }
+  
+  .horizontal {
+    background: black;
+    width: 200px;
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  .hook {
+    width: 63px;
+    height: 50px;
+    border: solid 25px black;
+    border-bottom: none;
+    position: absolute;
+    right: 25px;
+  }
+  
+  .man {
+    width: 100px;
+    height: 175px;
+    position: absolute;
+    top: 75px;
+    left: 25px;
+  }
+  
+  .man-1 {
+    width: 40px;
+    height: 40px;
+    border: solid 10px black;
+    border-radius: 50%;
+    position: absolute;
+    top: -2px;
+    left: 19px;
+    display: none;
+  }
+  
+  .man-2 {
+    background: black;
+    width: 10px;
+    height: 70px;
+    position: absolute;
+    top: 57px;
+    left: 45px;
+    display: none;
+  }
+  
+  .man-3 {
+    background: black;
+    width: 10px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    left: 21px;
+    transform: rotate(-50deg);
+    display: none;
+  }
+  
+  .man-4 {
+    background: black;
+    width: 10px;
+    height: 60px;
+    position: absolute;
+    top: 30px;
+    right: 21px;
+    transform: rotate(50deg);
+    display: none;
+  }
+  
+  .man-5 {
+    background: black;
+    width: 10px;
+    height: 60px;
+    position: absolute;
+    bottom: -2px;
+    left: 25px;
+    transform: rotate(40deg);
+    display: none;
+  }
+  
+  .man-6 {
+    background: black;
+    width: 10px;
+    height: 60px;
+    position: absolute;
+    bottom: -2px;
+    right: 25px;
+    transform: rotate(-40deg);
+    display: none;
+  }
+  
+  .content {
+    display: inline-block;
+    margin: 0 auto;
+  }
+  
+  #word {
+    text-align: left;
+    font-size: 25px;
+  }
+  
+  .guess-container {
+    text-align: left;
+    font-size: 25px;
+    margin-top: 15px;
+  }
+  
+  #guess {
+    font-size: 25px;
+    text-align: center;
+    width: 50px;
+    border: none;
+    border: solid 2px black;
+    outline: none;
+    text-transform: capitalize;
+  }
+  
+  #misses {
+    text-align: left;
+    font-size: 20px;
+    margin-top: 5px;
+  }
+  
+  .instruction {
+    text-align: left;
+    font-size: 15px;
+    margin-top: 5px;
+  }
+  

@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+
+* {
+    box-sizing: border-box;
+  }
+  :root {
+    --primary: #f7f396;
+    --secondary: #639;
+    --grass: #8beaaf;
+    --size: 250;
+  }
+  body {
+    align-items: center;
+    background: var(--grass);
+    counter-reset: score;
+    display: flex;
+    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  .game {
+    background: #00f;
+    cursor: search;
+    height: 250px;
+    margin: 0;
+    position: relative;
+    width: 250px;
+  }
+  .game__cell {
+    --cellSize: calc((var(--size) / var(--cells)));
+    height: calc(var(--cellSize) * 1px);
+    left: calc((var(--x) * var(--cellSize)) * 1px);
+    line-height: calc(var(--cellSize) * 1px);
+    position: absolute;
+    top: calc((var(--y) * var(--cellSize)) * 1px);
+    width: calc(var(--cellSize) * 1px);
+  }
+  .game__cell .game__cell {
+    display: none;
+  }
+  .game__cell:hover > .egg__container {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .game__cell:hover > .egg__container > .egg {
+    transform-origin: center;
+    transform: translate(-50%, -50%) scale(1) rotate(calc(var(--rotation) * 1deg));
+  }
+  .grass {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .grass__base {
+    fill: #87d37c;
+  }
+  .grass__blade {
+    fill: #26a65b;
+  }
+  .egg {
+    background: radial-gradient(circle at 30% 0%, var(--primary) 20%, var(--secondary) 20%, var(--secondary) 25%, var(--primary) 25%, var(--primary) 30%, var(--secondary) 30%, var(--secondary) 35%, var(--primary) 35%) 0 0/200% 200%, var(--primary);
+    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+    height: 50px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0) rotate(calc(var(--rotation) * 1deg));
+    transition: transform 0.25s ease;
+    width: 40px;
+  }
+  .egg__container {
+    height: calc(var(--cellSize) * 1px);
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.25s ease;
+    width: calc(var(--cellSize) * 1px);
+  }
+  .egg__check {
+    cursor: pointer;
+    height: calc(var(--cellSize) * 1px);
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: calc(var(--cellSize) * 1px);
+    z-index: 2;
+  }
+  .egg__check:checked {
+    counter-increment: score var(--score);
+    transform: scale(0);
+  }
+  .egg__check:checked ~ .egg__container {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .egg__check:checked ~ .egg__container > .egg {
+    -webkit-animation: found 0.5s forwards;
+            animation: found 0.5s forwards;
+  }
+  .egg__check:checked ~ .egg__container .game__cell {
+    display: block;
+  }
+  .info-screen {
+    align-items: center;
+    background: var(--secondary);
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    left: 50%;
+    overflow: hidden;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    z-index: 5;
+  }
+  .info-screen__content {
+    position: relative;
+    max-width: 90vw;
+    width: 200px;
+  }
+  .info-screen__content h1,
+  .info-screen__content h2 {
+    text-transform: uppercase;
+  }
+  .info-screen__content p {
+    text-align: justify;
+  }
+  .info-screen__content .egg {
+    --secondary: #f7f396;
+    --primary: #8beaaf;
+    left: 100%;
+    position: absolute;
+    top: 0;
+    transform: translate(-120%, 60%) scale(1) rotate(20deg);
+  }
+  button {
+    background: var(--secondary);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 4px;
+    padding: 8px 12px;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  .start {
+    height: 100vh;
+    left: 50%;
+    opacity: 0;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    z-index: 6;
+  }
+  .start:checked,
+  .start:checked ~ .title-screen {
+    transform: translate(-50%, -50%) translate(0, -100%);
+    transition: transform 0.25s ease;
+  }
+  .start:checked ~ .result {
+    -webkit-animation: slideUp 0.25s 15s both;
+            animation: slideUp 0.25s 15s both;
+  }
+  .start:checked ~ .result .egg {
+    -webkit-animation-name: drop;
+            animation-name: drop;
+  }
+  .result {
+    text-align: center;
+    transform: translate(-50%, -50%) translate(0, 100%);
+  }
+  .result .egg {
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    transform: translate(-50%, -50%) scale(1) rotate(calc(var(--rotation) * 1deg)) translate(0, -100vh);
+  }
+  .result .egg:nth-of-type(1) {
+    -webkit-animation-delay: 15.25s;
+            animation-delay: 15.25s;
+  }
+  .result .egg:nth-of-type(2) {
+    -webkit-animation-delay: 15.5s;
+            animation-delay: 15.5s;
+  }
+  .result .egg:nth-of-type(3) {
+    -webkit-animation-delay: 15.75s;
+            animation-delay: 15.75s;
+  }
+  .bunny {
+    position: absolute;
+    font-size: 4rem;
+    z-index: 4;
+  }
+  .bunny:nth-of-type(1) {
+    top: -35%;
+    left: -15%;
+    transform: rotate(-30deg);
+  }
+  .bunny:nth-of-type(2) {
+    top: 105%;
+    left: 85%;
+    transform: rotate(30deg);
+  }
+  .score:after {
+    content: counter(score);
+  }
+  @-webkit-keyframes wiggle {
+    0%, 100% {
+      transform: translate(-150%, 100%) scale(1) rotate(-35deg);
+    }
+    50% {
+      transform: translate(-150%, 100%) scale(1) rotate(35deg);
+    }
+  }
+  @keyframes wiggle {
+    0%, 100% {
+      transform: translate(-150%, 100%) scale(1) rotate(-35deg);
+    }
+    50% {
+      transform: translate(-150%, 100%) scale(1) rotate(35deg);
+    }
+  }
+  @-webkit-keyframes slideUp {
+    to {
+      transform: translate(-50%, -50%) translate(0, 0);
+    }
+  }
+  @keyframes slideUp {
+    to {
+      transform: translate(-50%, -50%) translate(0, 0);
+    }
+  }
+  @-webkit-keyframes found {
+    0% {
+      transform: translate(-50%, -50%) scale(1) rotate(calc(var(--rotation) * 1deg));
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.5) rotate(calc(var(--rotation) * 1deg));
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0) rotate(calc(var(--rotation) * 1deg));
+    }
+  }
+  @keyframes found {
+    0% {
+      transform: translate(-50%, -50%) scale(1) rotate(calc(var(--rotation) * 1deg));
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.5) rotate(calc(var(--rotation) * 1deg));
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(0) rotate(calc(var(--rotation) * 1deg));
+    }
+  }
+  @-webkit-keyframes drop {
+    to {
+      transform: translate(-50%, -50%) scale(1) rotate(calc(var(--rotation) * 1deg)) translate(0, 100vh);
+    }
+  }
+  @keyframes drop {
+    to {
+      transform: translate(-50%, -50%) scale(1) rotate(calc(var(--rotation) * 1deg)) translate(0, 100vh);
+    }
+  }
+  
