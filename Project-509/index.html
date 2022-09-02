@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Game</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo">Color Game</a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="howtoplay.html">How to play</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacypolicy.html">Privacy policy</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+</header>
+<html>
+
+<head>
+    <title>Pixel Art Maker!</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Indie+Flower|Lobster|Bungee+Shade|Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="pixel-art.css">
+
+</head>
+
+<body>
+    <h1>Lab: Pixel Art Maker</h1>
+
+    <div id="grid">
+        <h2>Choose Grid Size</h2>
+        <form id="sizePicker">
+          <p>Grid Height:</p>
+                <input type="number" id="inputHeight"                     name="height" min="1" max="50" value="1"> 
+          <p>Grid Width:</p>
+                <input type="number" id="inputWidth"                       name="width" min="1" max="50" value="1">
+          <p><input id="button" type="submit"></p>
+        </form>
+    
+        <h2>Pick A Color</h2>
+            <input type="color" id="colorPicker">
+        <div id="eraser">
+            <h2>Eraser</h2>
+            <button id="eraserButton" type="submit">Clear All Styling</button>
+            <h3>Double Click to remove color</h3>
+        </div>
+    </div>
+
+
+    <div id="design">
+    <h2>Design Canvas</h2>
+    <table id="pixelCanvas"></table>
+    </div>
+
+    
+
+    <!-- jQuery CDN -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="pixel-art.js"></script>
+</body>
+
+</html>
+<script>
+    
+let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+}
+</script>
+
+<script src="main.js"></script>
+</body>
+</html>

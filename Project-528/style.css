@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+
+@media (max-width:450px){
+
+    html{
+        font-size: 50%;
+    }
+
+}
+
+body {
+    --primary-color: hsl(198, 100%, 57%);
+    --warning-color: hsl(51, 100%, 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+  }
+  
+  [transparent] {
+    opacity: 0 !important;
+  }
+  
+  [disabled] {
+    pointer-events: none !important;
+  }
+  
+  .game {
+    width: 264px;
+    height: 264px;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 800px;
+  }
+  .game .card {
+    --card-padding: 0;
+    --card-bg: transparent;
+    --card-radius: 0;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    margin: 3px;
+    transition: 0.6s ease-out;
+    transform-style: preserve-3d;
+    cursor: pointer;
+  }
+  .game .card:nth-child(1) {
+    order: var(--order);
+  }
+  .game .card:nth-child(1) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/svkFR1Hi7Cq8Mx2.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(2) {
+    order: var(--order);
+  }
+  .game .card:nth-child(2) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/svkFR1Hi7Cq8Mx2.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(3) {
+    order: var(--order);
+  }
+  .game .card:nth-child(3) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/sA2yFGVKOhdqIUW.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(4) {
+    order: var(--order);
+  }
+  .game .card:nth-child(4) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/sA2yFGVKOhdqIUW.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(5) {
+    order: var(--order);
+  }
+  .game .card:nth-child(5) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/C6IODEcktVi5mzA.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(6) {
+    order: var(--order);
+  }
+  .game .card:nth-child(6) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/C6IODEcktVi5mzA.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(7) {
+    order: var(--order);
+  }
+  .game .card:nth-child(7) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/jUB4ZQDHhJrbmLG.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(8) {
+    order: var(--order);
+  }
+  .game .card:nth-child(8) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/jUB4ZQDHhJrbmLG.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(9) {
+    order: var(--order);
+  }
+  .game .card:nth-child(9) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/V8k7AdNXZRcOMYh.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(10) {
+    order: var(--order);
+  }
+  .game .card:nth-child(10) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/V8k7AdNXZRcOMYh.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(11) {
+    order: var(--order);
+  }
+  .game .card:nth-child(11) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/KfJOeBVxzD76kYX.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(12) {
+    order: var(--order);
+  }
+  .game .card:nth-child(12) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/KfJOeBVxzD76kYX.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(13) {
+    order: var(--order);
+  }
+  .game .card:nth-child(13) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/67FrAT8uQgcXwv2.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(14) {
+    order: var(--order);
+  }
+  .game .card:nth-child(14) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/67FrAT8uQgcXwv2.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(15) {
+    order: var(--order);
+  }
+  .game .card:nth-child(15) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/tepla8GPhcF5unB.png") 0 0/cover no-repeat;
+  }
+  .game .card:nth-child(16) {
+    order: var(--order);
+  }
+  .game .card:nth-child(16) .card__face--back {
+    background: url("https://i.loli.net/2020/05/28/tepla8GPhcF5unB.png") 0 0/cover no-repeat;
+  }
+  .game .card.flipped {
+    transform: rotateY(0.5turn);
+    pointer-events: none;
+  }
+  .game .card__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://i.loli.net/2020/05/28/mfWqsrGSXAELluD.jpg") 0 0/cover no-repeat;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  .game .card__face--back {
+    transform: rotateY(0.5turn);
+  }
+  
+  .btn-ark {
+    position: relative;
+    width: 38px;
+    height: 38px;
+    margin-top: 30px;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+    color: var(--warning-color);
+    background-color: transparent;
+    border: 5px solid currentColor;
+    text-shadow: 0 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), inset 0 0 50px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transform: rotate(-45deg) scale(0.8);
+    transition: 0.3s;
+  }
+  .btn-ark .play-icon {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-left: 10px solid;
+    border-bottom: 5px solid transparent;
+    transform: rotate(45deg) translate(22px, -10px);
+  }
+  .btn-ark .label {
+    transform: rotate(45deg) translateY(5px) scale(0.8);
+  }
+  .btn-ark::after {
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: inherit;
+    transform: translate(-50%, -50%);
+    -webkit-animation: shock 0.6s ease-out infinite;
+            animation: shock 0.6s ease-out infinite;
+  }
+  
+  @-webkit-keyframes shock {
+    to {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes shock {
+    to {
+      transform: translate(-50%, -50%) scale(2);
+      opacity: 0;
+    }
+  }
+  .btn {
+    width: 140px !important;
+    height: 50px !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+  }
+  
+  .statistics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    white-space: nowrap;
+  }
+  .statistics .score {
+    margin-right: 100px;
+  }
+  
+  #final-score-dialog .dialog-body {
+    text-align: center;
+  }

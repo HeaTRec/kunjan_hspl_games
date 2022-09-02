@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music game</title>
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> Music game </a>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="howtoplay.html">How to play</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacypolicy.html">Privacy policy</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+</header>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet" type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+
+    class App extends React.Component {
+      constructor() {
+        super();
+
+        this.state = {
+            displayText: "What's that sound?",
+            volume: "1",
+          }
+      }
+      componentDidMount() {
+        document.addEventListener("keydown", this.handleKeyDown)
+      }
+      getVolume = () => {
+        console.log(this.state.volume);
+      }
+      changeVolume = (e) => {
+        let currentVolume = e.target.value / 10;
+        this.setState ({
+          volume: currentVolume
+        })
+        console.log(this.state.volume);
+      }
+      handleKeyDown = (e) => {
+        let pressedValue = e.key;
+        console.log(pressedValue);
+        this.setState({
+        displayText: e.target.getAttribute("name"),
+        })
+        switch (pressedValue) {
+          case "q":
+            let audio1 = new Audio("https://dl.dropboxusercontent.com/s/l7wza2dhfz986ix/bamboo.wav?dl=0");
+            audio1.play();
+            audio1.volume = this.state.volume;
+            this.setState({
+            displayText: "Bamboo",
+            })
+            break;
+          case "w":
+            let audio2 = new Audio("https://dl.dropboxusercontent.com/s/kllkna6c9qrrsrz/bell.wav?dl=0");
+            audio2.play();
+            audio2.volume = this.state.volume;
+            this.setState({
+            displayText: "Bell",
+            })
+            break;
+          case "e":
+            let audio3 = new Audio("https://dl.dropboxusercontent.com/s/lu3eycua1ivn7bo/chime.wav");
+            audio3.play();
+              audio3.volume = this.state.volume;
+            this.setState({
+            displayText: "Chime",
+            })
+            break;
+          case "a":
+            let audio4 = new Audio("https://dl.dropboxusercontent.com/s/k6y9qa87zkclsu8/glass.wav");
+            audio4.play();
+            audio4.volume = this.state.volume;
+            this.setState({
+            displayText: "Glass",
+            })
+            break;
+          case "s":
+            let audio5 = new Audio("https://dl.dropboxusercontent.com/s/q7z0ogqnwv2ttpv/gluck.wav");
+            audio5.play();
+            audio5.volume = this.state.volume;
+            this.setState({
+            displayText: "Gluck",
+            })
+            break;
+          case "d":
+            let audio6 = new Audio("https://dl.dropboxusercontent.com/s/z8cu80shxioqsz6/ring.wav");
+            audio6.play();
+            audio6.volume = this.state.volume;
+            this.setState({
+            displayText: "Ring",
+            })
+            break;
+          case "z":
+            let audio7 = new Audio("https://dl.dropboxusercontent.com/s/cvgoipqfwgpncss/keys.wav");
+            audio7.play();
+            audio7.volume = this.state.volume;
+            this.setState({
+            displayText: "Keys",
+            })
+            break;
+          case "x":
+            let audio8 = new Audio("https://dl.dropboxusercontent.com/s/tqxhaj44y4icouf/ping.wav");
+            audio8.play();
+            audio8.volume = this.state.volume;
+            this.setState({
+            displayText: "Ping",
+            })
+            break;
+          case "c":
+            let audio9 = new Audio("https://dl.dropboxusercontent.com/s/dzfil8t91xqelvm/wind.wav");
+            audio9.play();
+            audio9.volume = this.state.volume;
+            this.setState({
+            displayText: "Wind",
+            })
+            break;
+          default:
+            break;
+        }
+      }
+
+      clickHandler = (e) => {
+        let clickedValue = e.target.getAttribute("id")
+        console.log(this.state.volume);
+        this.setState({
+          displayText: e.target.getAttribute("name"),
+        })
+        switch (clickedValue) {
+          case "Q":
+            let audio1 = new Audio("https://dl.dropboxusercontent.com/s/l7wza2dhfz986ix/bamboo.wav?dl=0");
+            audio1.play();
+            audio1.volume = this.state.volume;
+            break;
+          case "W":
+            let audio2 = new Audio("https://dl.dropboxusercontent.com/s/kllkna6c9qrrsrz/bell.wav?dl=0");
+            audio2.play();
+            audio2.volume = this.state.volume;
+            break;
+          case "E":
+            let audio3 = new Audio("https://dl.dropboxusercontent.com/s/lu3eycua1ivn7bo/chime.wav");
+            audio3.play();
+            audio3.volume = this.state.volume;
+            break;
+          case "A":
+            let audio4 = new Audio("https://dl.dropboxusercontent.com/s/k6y9qa87zkclsu8/glass.wav");
+            audio4.play();
+            audio4.volume = this.state.volume;
+            break;
+          case "S":
+            let audio5 = new Audio("https://dl.dropboxusercontent.com/s/q7z0ogqnwv2ttpv/gluck.wav");
+            audio5.play();
+            audio5.volume = this.state.volume;
+            break;
+          case "D":
+            let audio6 = new Audio("https://dl.dropboxusercontent.com/s/z8cu80shxioqsz6/ring.wav");
+            audio6.play();
+            audio6.volume = this.state.volume;
+            break;
+          case "Z":
+            let audio7 = new Audio("https://dl.dropboxusercontent.com/s/cvgoipqfwgpncss/keys.wav");
+            audio7.play();
+                        audio7.volume = this.state.volume;
+            break;
+          case "X":
+            let audio8 = new Audio("https://dl.dropboxusercontent.com/s/tqxhaj44y4icouf/ping.wav");
+            audio8.play();
+                        audio8.volume = this.state.volume;
+            break;
+          case "C":
+            let audio9 = new Audio("https://dl.dropboxusercontent.com/s/dzfil8t91xqelvm/wind.wav");
+            audio9.play();
+                        audio9.volume = this.state.volume;
+            break;
+          default:
+            break;
+        }
+      }
+        render () {
+          return (
+          <React.Fragment>
+            <div id="drum-machine">
+              <h1>Xylophone</h1>
+              <div id="display">{this.state.displayText}</div>
+            </div>
+            <div className="buttons">
+                <button
+                id="Q"
+                className="drum-pad"
+                type="button"
+                name="Bamboo"
+                onClick={this.clickHandler}
+                >
+                Q
+              </button>
+
+
+
+                <button
+                id="W"
+                className="drum-pad"
+                type="button"
+                name="Bell"
+                onClick={this.clickHandler}
+                >W</button>
+
+                <button
+                id="E"
+                className="drum-pad"
+                type="button"
+                name="Chime"
+                onClick={this.clickHandler}
+                >E</button>
+
+                <button
+                id="A"
+                className="drum-pad"
+                type="button"
+                name="Glass"
+                onClick={this.clickHandler}
+                >A</button>
+
+                <button
+                id="S"
+                className="drum-pad"
+                type="button"
+                name="Cling"
+                onClick={this.clickHandler}
+                >S</button>
+
+                <button
+                id="D"
+                className="drum-pad"
+                type="button"
+                name="Ring"
+                onClick={this.clickHandler}
+                >D</button>
+
+                <button
+                id="Z"
+                className="drum-pad"
+                type="button"
+                name="Keys"
+                onClick={this.clickHandler}
+                >Z</button>
+
+                <button
+                id="X"
+                className="drum-pad"
+                type="button"
+                name="Ping"
+                onClick={this.clickHandler}
+                >X</button>
+
+                <button
+                id="C"
+                className="drum-pad"
+                type="button"
+                name="Wind"
+                onClick={this.clickHandler}
+                >C</button>
+
+            </div>
+    {/*<button
+            id="getVolume"
+            onClick={this.getVolume}>What's the volume?</button>*/}
+            <input type="range" id="range" min="0" max="10" onChange={this.changeVolume}></input>
+          </React.Fragment>
+          )
+        }
+      }
+      ReactDOM.render(<App />, document.getElementById('root'))
+    </script>
+</body>
+
+</html>
+
+<script>
+    
+let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+}
+</script>
+<script src="main.js"></script>
+</body>
+</html>

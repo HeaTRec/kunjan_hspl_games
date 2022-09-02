@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange:#037c2c;
+    --black:#130f40;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+    --border:.2rem solid rgba(0,0,0,.1);
+    --outline:.1rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+
+
+
+
+.btn:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:gray;
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:white;
+}
+
+
+
+.header .navbar a{
+    font-size: 1.7rem;
+    margin:0 1rem;
+    color:white;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+
+
+.header .icons div{
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:var(--black);
+    font-size: 2rem;
+    margin-left: .3rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header .icons div:hover{
+    background: var(--orange);
+    color:#fff;
+}
+
+#menu-btn{
+    display: none;
+}
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding:2rem;
+    }
+}
+
+
+@media (max-width:768px){
+
+    #menu-btn{
+        display: inline-block;
+    }
+
+   
+
+    .header .navbar{
+        position: absolute;
+        top:110%; right:-110%;
+        width:30rem;
+        box-shadow: var(--box-shadow);
+        border-radius: .5rem;
+        background: gray;
+    }
+
+    .header .navbar.active{
+        right:2rem;
+        transition: .4s linear;
+    }
+
+    .header .navbar a{
+        font-size: 2rem;
+        margin:2rem 2.5rem;
+        display: block;
+    }
+
+}
+
+body {
+  text-align: center;
+  background: url("https://raw.githubusercontent.com/JS-goose/Projects/master/Udacity%20GWG%20Phase%201/Pixel%20Art%20Maker/vectorArt.jpg");
+  /* background-position: center; */
+  background-attachment: fixed; 
+  margin-top: 80px; 
+}
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input {
+background: rgba(255,255,255,0.5);
+border: none;
+border-right: 1px solid black;
+border-bottom: 1px solid black;
+border-radius: 3px;
+}
+
+h1 {
+font-family: "Bungee Shade", cursive;
+font-size: 70px;
+margin: 0.2em;
+color: rgba(15, 13, 136, 0.9);
+}
+
+h2 {
+margin: 1em 0 0.25em;
+}
+
+h2 {
+margin-top: 0.5em;
+text-decoration: underline;
+}
+
+table,
+tr,
+td {
+border: 1px solid black;
+}
+
+table {
+border-collapse: collapse;
+margin: 0 auto;
+}
+
+tr {
+height: 20px;
+}
+
+td {
+width: 20px;
+}
+
+input[type="number"] {
+width: 6em;
+}
+
+#eraserButton {
+border-right: 1px solid black;
+border-bottom: 1px solid black;
+border-radius: 3px;
+background: rgba(255,255,255,0.5);
+}
+
+#button {
+border-right: 1px solid black;
+border-bottom: 1px solid black;
+border-radius: 3px;
+}
+
+#grid {
+color: rgb(231, 235, 8);  
+background-color: rgba(63, 63, 42, 0.3);
+margin-right: 60%;
+border: 3px solid rgba(13, 52, 226, 0.9);
+width: 30%;
+padding-top: 2%;
+padding-bottom: 2%;
+}
+
+#design {
+font-family: "Press Start 2P", cursive;
+margin-top: -30%;
+margin-left: 40%;
+color: rgba(17, 216, 60, 0.9);
+cursor: crosshair;
+}
+
+
