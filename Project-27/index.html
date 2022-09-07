@@ -4,28 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baloon Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+
 </head>
 <body>
-    
-    <!-- click scene to start game -->
+<header class="header">
+    <a href="#" class="logo"> Baloon Game </a>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="privacypolicy.html">Privacy Policy</a>
+    </nav>
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+</header>
+<!-- click scene to start game -->
 <div id='balloon_game'>
     <div id='dart'></div>
     <div id='explode_balloon'></div>
     <div id='score'></div>
   </div>
   
-    <script src="main.js"></script>
-    <section class="footer">
-        <p>Copyright</p>
-        <div class="link">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="howtoplay.html">How to play</a>
-            <a href="disclaimer.html">Disclaimer</a>
-            <a href="privacypolicy.html">Privacy policy</a>
-        </div>
-    </section>
+<script>
+let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+}
+</script>
+<script src="main.js"></script>
 </body>
 </html>

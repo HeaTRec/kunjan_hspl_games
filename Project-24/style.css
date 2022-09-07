@@ -143,6 +143,7 @@ html{
 body {
   position: relative;
   overflow: hidden
+  
 }
 
 #effect,
@@ -180,6 +181,7 @@ body {
 #cont,
 .leader {
   margin: 0 auto
+  
 }
 
 ::-webkit-input-placeholder {
@@ -197,7 +199,8 @@ body {
   border: 5px solid #444;
   background: silver;
   max-width: 900px;
-  max-height: 700px
+  max-height: 700px;
+  margin-top:100px;
 }
 
 #effect {

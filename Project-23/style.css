@@ -160,6 +160,7 @@ html, body {
   width:80%;
   height:80%;
   overflow:visible;
+  margin-top: 100px;
 }
 
 #up, #down, #left, #right, #replay {
